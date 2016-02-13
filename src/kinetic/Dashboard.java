@@ -10,6 +10,7 @@ public class Dashboard {
 	}
 
 	public static void run() {
+		//Testing network table
 		networkTable.putNumber("table", 1);
 	}
 }
