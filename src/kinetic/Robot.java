@@ -4,10 +4,15 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends IterativeRobot {
-    public void robotInit() {
+    //This runs first when the robot is turn on
+	//Initialize Mappings and Interfaces
+	public void robotInit() {
+		//RobotMap
     	RM.init();
+    	//OperatorInterface
 		OI.init();
-    }
+		
+	}
 	
     public void disabledInit(){
 
