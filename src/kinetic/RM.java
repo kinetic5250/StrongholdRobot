@@ -4,10 +4,12 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Relay;
 
 public class RM {
+	//Relays for suspensions
 	public static Relay r1;
 	public static Relay r2;
 	public static Relay r3;
 	public static Relay r4;
+	//Potentiometers for suspensions
 	public static AnalogInput pot1;
 	public static AnalogInput pot2;
 	public static AnalogInput pot3;
