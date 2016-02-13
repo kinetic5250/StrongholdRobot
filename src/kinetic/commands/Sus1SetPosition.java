@@ -2,9 +2,9 @@ package kinetic.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ExampleCommand extends Command {
-
-    public ExampleCommand() {
+public class Sus1SetPosition extends CommandBase {
+	
+    public Sus1SetPosition() {
     }
 
     protected void initialize() {
