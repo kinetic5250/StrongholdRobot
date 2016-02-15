@@ -1,6 +1,8 @@
 package kinetic;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Scheduler;
+import kinetic.commands.DriveCommand;
 
 public class Robot extends IterativeRobot {
 	
@@ -31,10 +33,11 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
+    	Scheduler.getInstance().add(new DriveCommand());
     }
 
     public void teleopPeriodic() {
-        //Scheduler.getInstance().run();
+        Scheduler.getInstance().run();
         //Dashboard.run();
     }
     
