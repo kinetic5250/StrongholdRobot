@@ -1,29 +1,26 @@
 package kinetic;
 
-import edu.wpi.first.wpilibj.AnalogInput;
-import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 
 public class RM {
-	//Relays for suspensions
-	public static Relay r1;
-	public static Relay r2;
-	public static Relay r3;
-	public static Relay r4;
-	//Potentiometers for suspensions
-	public static AnalogInput pot1;
-	public static AnalogInput pot2;
-	public static AnalogInput pot3;
-	public static AnalogInput pot4;
-	
+	static Joystick driveStick;
+	static RobotDrive myDrive;
+	static Talon frontLeft;
+	static Talon frontRight;
+	static Talon rearLeft;
+	static Talon rearRight;
+    
     
 	public static void init() {
-    	r1 = new Relay(0);
-    	r2 = new Relay(1);
-    	r3 = new Relay(2);
-    	r4 = new Relay(3);
-    	pot1 = new AnalogInput(0);
-    	pot2 = new AnalogInput(1);
-    	pot3 = new AnalogInput(2);
-    	pot4 = new AnalogInput(3);
+		frontLeft = new Talon(1);
+		frontRight = new Talon (2);
+		rearRight= new Talon(3);
+		rearLeft = new Talon(4);
+		myDrive = new RobotDrive(frontLeft, rearRight, frontLeft, frontRight);
+		
+		driveStick = new Joystick(1);
+			
     }
 }
