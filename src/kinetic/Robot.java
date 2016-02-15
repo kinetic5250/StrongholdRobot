@@ -36,7 +36,6 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         //Scheduler.getInstance().run();
         //Dashboard.run();
-    	RM.myDrive.arcadeDrive(RM.driveStick);
     }
     
     public void testPeriodic() {
