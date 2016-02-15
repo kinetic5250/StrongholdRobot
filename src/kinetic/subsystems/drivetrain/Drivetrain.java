@@ -2,10 +2,10 @@ package kinetic.subsystems.drivetrain;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class Drivetrain extends Subsystem {
+public class DriveTrain extends Subsystem {
 	
 
-	public Drivetrain() {
+	public DriveTrain() {
 
     }
 	
