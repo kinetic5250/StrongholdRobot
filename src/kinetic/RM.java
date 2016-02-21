@@ -30,15 +30,22 @@ public class RM {
 		rearLeftSuspension = new CANJaguar(27);
 		rearRightSuspension = new CANJaguar(28);
 		
+		frontLeftSuspension.setInverted(false);
+		frontRightSuspension.setInverted(false);
+		rearLeftSuspension.setInverted(false);
+		rearRightSuspension.setInverted(false);
+		
 		frontLeftSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
 		frontRightSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
 		rearLeftSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
 		rearRightSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
 		
+		/*
 		frontLeftSuspension.enableControl();
 		frontRightSuspension.enableControl();
 		rearLeftSuspension.enableControl();
 		rearRightSuspension.enableControl();
+		*/
 		
 		robotDrive = new RobotDrive(frontLeft, frontRight, rearLeft, rearRight);
 	}

@@ -1,13 +1,12 @@
-
 package kinetic.commands;
 
 import kinetic.OI;
 
-public class DriveCommand extends CommandBase {
-
-    public DriveCommand() {
+public class SuspensionCommand extends CommandBase {
+	
+    public SuspensionCommand() {
         // Use requires() here to declare subsystem dependencies
-        requires(driveTrain);
+        requires(suspension);
     }
 
     // Called just before this Command runs the first time
@@ -16,7 +15,7 @@ public class DriveCommand extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	driveTrain.arcadeDrive(OI.stick1, false);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
