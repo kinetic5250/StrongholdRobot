@@ -11,18 +11,18 @@ public class Suspension extends Subsystem {
 	}
 	
 	public void setFrontLeft(double position) {
-		RM.frontLeftSuspension.setSetpoint(position);
+		RM.frontLeftSuspension.set(position);
 	}
 	
 	public void setFrontRight(double position) {
-		RM.frontRightSuspension.setSetpoint(position);
+		RM.frontRightSuspension.set(position);
 	}
 	
 	public void setRearLeft(double position) {
-		RM.rearLeftSuspension.setSetpoint(position);
+		RM.rearLeftSuspension.set(position);
 	}
 	
 	public void setRearRight(double position) {
-		RM.rearRightSuspension.setSetpoint(position);
+		RM.rearRightSuspension.set(position);
 	}
 }
