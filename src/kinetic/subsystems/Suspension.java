@@ -7,7 +7,7 @@ import kinetic.commands.SuspensionCommand;
 public class Suspension extends Subsystem {
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new SuspensionCommand());
+		//setDefaultCommand(new SuspensionCommand(2.5,2.5,2.5,2.5));
 	}
 	
 	public void setFrontLeft(double position) {
