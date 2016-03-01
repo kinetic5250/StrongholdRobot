@@ -10,21 +10,14 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends IterativeRobot {
 	
-    public static Joystick stick1;
-	public static Joystick stick2;
+    public static Joystick stick1, stick2;
     public static CameraServer server;
     
     //DriveTrain motors and RobotDrive(which is the controller)
-  	public static CANTalon frontLeft;
-  	public static CANTalon frontRight;
-  	public static CANTalon rearLeft;
-  	public static CANTalon rearRight;
+  	public static CANTalon frontLeft, frontRight, rearLeft, rearRight;
   	public static RobotDrive robotDrive;
   	
-  	public static CANJaguar sus1;	// the motor to directly control with a joystick
-  	public static CANJaguar sus2;
-  	public static CANJaguar sus3;
-  	public static CANJaguar sus4;
+  	public static CANJaguar sus1, sus2, sus3, sus4;
   	
   	//This runs first when the robot is turn on
   	//Initialize Mappings, Interfaces, and Dashboard
