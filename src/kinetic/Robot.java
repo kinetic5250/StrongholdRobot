@@ -38,6 +38,10 @@ public class Robot extends IterativeRobot {
 
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        RM.motor.set(OI.stick2.getY()*0.060+.497);
+    	RM.motor2.set(OI.stick2.getY()*0.060+.349);
+    	RM.motor3.set(OI.stick2.getY()*-0.060+0.625);
+    	RM.motor4.set(OI.stick2.getY()*0.060+0.278);
         //Dashboard.run();
     }
     

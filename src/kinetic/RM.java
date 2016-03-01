@@ -3,6 +3,7 @@ package kinetic;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.Joystick;
 
 public class RM {
 	
@@ -13,40 +14,40 @@ public class RM {
 	public static CANTalon rearRight;
 	public static RobotDrive robotDrive;
 	
-	//CANJaguars that control linear actuators
-	public static CANJaguar frontLeftSuspension;
-	public static CANJaguar frontRightSuspension;
-	public static CANJaguar rearLeftSuspension;
-	public static CANJaguar rearRightSuspension;
-    
+	public static CANJaguar motor;	// the motor to directly control with a joystick
+    public static CANJaguar motor2;
+    public static CANJaguar motor3;
+    public static CANJaguar motor4;
+	
+	
 	public static void init() {
-		frontLeft = new CANTalon(21);
-		frontRight = new CANTalon (22);
-		rearRight= new CANTalon(23);
-		rearLeft = new CANTalon(24);
+		rearRight = new CANTalon(41);
+		rearLeft = new CANTalon (42);
+		frontLeft = new CANTalon(43);
+		frontRight = new CANTalon(44);
 		
-		frontLeftSuspension = new CANJaguar(25);
-		frontRightSuspension = new CANJaguar(26);
-		rearLeftSuspension = new CANJaguar(27);
-		rearRightSuspension = new CANJaguar(28);
+		motor = new CANJaguar(25);		// initialize the motor as a Talon on channel 0
+        motor2 = new CANJaguar(26);
+        motor3 = new CANJaguar(27);
+        motor4 = new CANJaguar(28);
+        
+        motor.setPositionMode(CANJaguar.kPotentiometer, -2000, -0, -0.0);
+        motor2.setPositionMode(CANJaguar.kPotentiometer, -2000, -0, -0.0);
+        motor3.setPositionMode(CANJaguar.kPotentiometer, 2000, 0, 0);
+        motor4.setPositionMode(CANJaguar.kPotentiometer, -2000, -0, -0);
+        
+        motor.enableControl();
+        motor2.enableControl();
+        motor3.enableControl();
+        motor4.enableControl();
 		
-		frontLeftSuspension.setInverted(false);
-		frontRightSuspension.setInverted(false);
-		rearLeftSuspension.setInverted(false);
-		rearRightSuspension.setInverted(false);
+		rearRight.setInverted(true);
+		rearLeft.setInverted(true);
+		frontLeft.setInverted(true);
+		frontRight.setInverted(true);
 		
-		frontLeftSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
-		frontRightSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
-		rearLeftSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
-		rearRightSuspension.setPositionMode(CANJaguar.kPotentiometer, 0.1, 0.001, 0.0);
 		
-		/*
-		frontLeftSuspension.enableControl();
-		frontRightSuspension.enableControl();
-		rearLeftSuspension.enableControl();
-		rearRightSuspension.enableControl();
-		*/
 		
-		robotDrive = new RobotDrive(frontLeft, frontRight, rearLeft, rearRight);
+		robotDrive = new RobotDrive(frontLeft, rearLeft, frontRight, rearRight);
 	}
 }
