@@ -1,7 +1,6 @@
 package kinetic.commands;
 
 //import not needed, for future reference/buttons
-import kinetic.OI;
 
 public class IntakeCommand extends CommandBase {
 
