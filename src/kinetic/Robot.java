@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends IterativeRobot {
@@ -19,7 +20,9 @@ public class Robot extends IterativeRobot {
 
  public static CANJaguar sus1, sus2, sus3, sus4;
 
- public static CANJaguar shooter, arm, intake;
+ public static CANJaguar shooter, arm;
+ 
+ public static Talon intake;
 
  //This runs first when the robot is turn on
  //Initialize Mappings, Interfaces, and Dashboard
@@ -73,9 +76,9 @@ public class Robot extends IterativeRobot {
   sus4.enableControl();
 
 
-  shooter = new CANJaguar(29);
   arm = new CANJaguar(30);
-  intake = new CANJaguar(31);
+  shooter = new CANJaguar(31);
+  intake = new Talon(0);
  };
 
  public void disabledInit() {
@@ -110,7 +113,7 @@ public class Robot extends IterativeRobot {
 
   shooter.set(stick2.getThrottle());
   arm.set(stick3.getRawAxis(1));
-  intake.set(stick1.getThrottle());
+  intake.set(stick1.getRawAxis(2));
  }
 
  public void testPeriodic() {}
